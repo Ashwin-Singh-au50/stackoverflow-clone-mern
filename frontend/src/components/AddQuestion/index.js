@@ -1,48 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; // ES6
+import "react-quill/dist/quill.snow.css"; 
 import "./index.css";
 import Editor from "react-quill/lib/toolbar";
 import axios from "axios";
 import { TagsInput } from "react-tag-input-component";
 import { selectUser } from "../../feature/userSlice";
 import { useHistory } from "react-router-dom";
-// import ChipsArray from "./TagsInput";
+
 
 function Index() {
   const user = useSelector(selectUser);
   var toolbarOptions = [
-    ["bold", "italic", "underline", "strike"], // toggled buttons
+    ["bold", "italic", "underline", "strike"], 
     ["blockquote", "code-block"],
 
-    [{ header: 1 }, { header: 2 }], // custom button values
+    [{ header: 1 }, { header: 2 }], 
     [{ list: "ordered" }, { list: "bullet" }],
-    [{ script: "sub" }, { script: "super" }], // superscript/subscript
-    [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-    [{ direction: "rtl" }], // text direction
+    [{ script: "sub" }, { script: "super" }],
+    [{ indent: "-1" }, { indent: "+1" }], 
+    [{ direction: "rtl" }], 
 
-    [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+    [{ size: ["small", false, "large", "huge"] }], 
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
 
-    [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+    [{ color: [] }, { background: [] }], 
     [{ font: [] }],
     [{ align: [] }],
 
-    ["clean"], // remove formatting button
+    ["clean"], 
   ];
   Editor.modules = {
     syntax: false,
     toolbar: toolbarOptions,
     clipboard: {
-      // toggle to add extra line breaks when pasting HTML:
+      
       matchVisual: false,
     },
   };
-  /*
-   * Quill editor formats
-   * See https://quilljs.com/docs/formats/
-   */
+  
   Editor.formats = [
     "header",
     "font",
@@ -60,9 +57,7 @@ function Index() {
     "video",
   ];
 
-  /*
-   * PropType validation
-   */
+  
 
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -107,7 +102,7 @@ function Index() {
               <div className="title">
                 <h3>Title</h3>
                 <small>
-                  Be specific and imagine you’re asking a question to another
+                  Be specific and imagine you are asking a question to another
                   person
                 </small>
                 <input
@@ -143,7 +138,7 @@ function Index() {
                 {/* <input
                   value={tag}
                   onChange={(e) => setTag(e.target.value)}
-                  data-role="tagsinput"
+                  data-role="tags input"
                   data-tag-trigger="Space"
                   type="text"
                   placeholder="e.g. (asp.net-mvc php react json)"

@@ -18,7 +18,7 @@ function AllQuestions({ data }) {
         <div className="all-questions-left">
           <div className="all-options">
             <div className="all-option">
-              <p>0</p>
+              <p>7</p>
               <span>votes</span>
             </div>
             <div className="all-option">
@@ -26,7 +26,7 @@ function AllQuestions({ data }) {
               <span>answers</span>
             </div>
             <div className="all-option">
-              <small>2 views</small>
+              <small>21 views</small>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ function AllQuestions({ data }) {
               <p>
                 {data?.user?.displayName
                   ? data?.user?.displayName
-                  : "Natalie lee"}
+                  : "Bret lee"}
               </p>
             </div>
           </div>
