@@ -6,6 +6,8 @@
   flex-direction: column;
 }
 
+delete all the node_modules folder from the app.
+
 .main-container {
   display: flex;
   flex-direction: column;
